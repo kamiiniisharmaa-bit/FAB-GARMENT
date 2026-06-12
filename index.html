@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>fab-garmrent — Artifacts of Future Nostalgia</title>
+  <!-- Google Fonts + Modern fallback -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (free CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #02020A;
+      font-family: 'Inter', sans-serif;
+      color: #EAEAEF;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    /* unique name brand: fab-garmrent — surreal, timeless, hybrid */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* custom cursor vibe (optional) */
+    ::selection {
+      background: #D4AF37;
+      color: #02020A;
+    }
+
+    /* typography */
+    h1, h2, h3, .logo, .nav-links a, .btn, .price, .category-card h3, .feature-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #FFFFFF 0%, #D4AF37 80%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .section-subhead {
+      color: #A9A9C0;
+      font-size: 1rem;
+      letter-spacing: 0.3px;
+      margin-bottom: 2.5rem;
+      border-left: 3px solid #D4AF37;
+      padding-left: 1rem;
+    }
+
+    /* header / navbar */
+    header {
+      padding: 1.5rem 0;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+      backdrop-filter: blur(4px);
+      background: rgba(2, 2, 10, 0.75);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.9rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(125deg, #F5E6B2, #C5A028);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      text-decoration: none;
+    }
+
+    .logo span {
+      font-weight: 300;
+      font-size: 1rem;
+      background: none;
+      color: #D4AF37;
+      -webkit-background-clip: unset;
+      background-clip: unset;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #EAEAEF;
+      font-weight: 500;
+      transition: 0.2s ease;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: #D4AF37;
+    }
+
+    .icon-group {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .icon-group i {
+      font-size: 1.3rem;
+      cursor: pointer;
+      transition: 0.2s;
+      color: #EAEAEF;
+    }
+
+    .icon-group i:hover {
+      color: #D4AF37;
+    }
+
+    /* hero section — unique cinematic vibe */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5rem 0 4rem;
+      gap: 3rem;
+    }
+
+    .hero-content {
+      flex: 1.2;
+    }
+
+    .hero-badge {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      background: rgba(212, 175, 55, 0.15);
+      display: inline-block;
+      padding: 0.3rem 0.9rem;
+      border-radius: 40px;
+      color: #D4AF37;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-content h1 {
+      font-size: 4.2rem;
+      line-height: 1.1;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-highlight {
+      background: linear-gradient(120deg, #D4AF37, #F3E5AB);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-desc {
+      font-size: 1.1rem;
+      line-height: 1.5;
+      color: #BCBCCF;
+      margin-bottom: 2rem;
+      max-width: 90%;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: #D4AF37;
+      color: #02020A;
+      padding: 0.9rem 2rem;
+      border-radius: 60px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.2s;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .btn-primary:hover {
+      background: #EBC65C;
+      transform: scale(1.02);
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+    }
+
+    .btn-outline {
+      border: 1px solid #D4AF37;
+      padding: 0.9rem 2rem;
+      border-radius: 60px;
+      text-decoration: none;
+      color: #EAEAEF;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+
+    .btn-outline:hover {
+      background: rgba(212, 175, 55, 0.1);
+      border-color: #F3D572;
+    }
+
+    .hero-visual {
+      flex: 1;
+      position: relative;
+    }
+
+    .hero-visual img {
+      width: 100%;
+      max-width: 480px;
+      border-radius: 32px;
+      filter: drop-shadow(0 20px 30px rgba(0,0,0,0.6));
+      border: 1px solid rgba(212,175,55,0.3);
+    }
+
+    /* featured categories — surreal cards */
+    .categories {
+      padding: 5rem 0;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.8rem;
+      margin-top: 2rem;
+    }
+
+    .category-card {
+      background: rgba(20, 20, 35, 0.7);
+      backdrop-filter: blur(6px);
+      border-radius: 32px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      cursor: pointer;
+    }
+
+    .category-card:hover {
+      transform: translateY(-8px);
+      border-color: #D4AF37;
+      background: rgba(30, 30, 50, 0.9);
+    }
+
+    .category-icon {
+      font-size: 3rem;
+      color: #D4AF37;
+      margin-bottom: 1.2rem;
+    }
+
+    .category-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .category-card p {
+      font-size: 0.85rem;
+      color: #B0B0C5;
+    }
+
+    /* products section — "Artifacts" collection */
+    .products {
+      padding: 3rem 0 6rem;
+    }
+
+    .product-slider {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .product-card {
+      background: #0F0F1A;
+      border-radius: 28px;
+      overflow: hidden;
+      transition: 0.25s ease;
+      border: 1px solid #222230;
+    }
+
+    .product-card:hover {
+      border-color: #D4AF37;
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -12px rgba(0,0,0,0.5);
+    }
+
+    .product-img {
+      background: #181826;
+      height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .product-img i {
+      font-size: 4.5rem;
+      color: #C5A028;
+      opacity: 0.8;
+    }
+
+    .badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: #D4AF37;
+      color: #02020A;
+      font-size: 0.7rem;
+      font-weight: bold;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+    }
+
+    .product-info {
+      padding: 1.5rem;
+    }
+
+    .product-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .product-desc {
+      font-size: 0.8rem;
+      color: #9A9AB0;
+      margin: 0.5rem 0;
+    }
+
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1rem;
+    }
+
+    .price {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #D4AF37;
+    }
+
+    .add-cart {
+      background: none;
+      border: 1px solid #3A3A55;
+      border-radius: 30px;
+      padding: 0.4rem 1rem;
+      color: white;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .add-cart:hover {
+      background: #D4AF37;
+      border-color: #D4AF37;
+      color: #02020A;
+    }
+
+    /* unique selling proposition */
+    .usp-section {
+      background: linear-gradient(145deg, #0B0B14 0%, #02020A 100%);
+      padding: 4rem 0;
+      border-radius: 60px;
+      margin: 2rem 0 3rem;
+      border: 1px solid rgba(212,175,55,0.2);
+    }
+
+    .usp-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .usp-item {
+      flex: 1;
+      min-width: 180px;
+    }
+
+    .usp-icon {
+      font-size: 2.5rem;
+      color: #D4AF37;
+      margin-bottom: 1rem;
+    }
+
+    .feature-title {
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    /* newsletter */
+    .newsletter {
+      background: #0A0A14;
+      padding: 3.5rem;
+      border-radius: 50px;
+      text-align: center;
+      margin: 3rem 0 4rem;
+      border: 1px solid #2A2A3A;
+    }
+
+    .newsletter h3 {
+      font-size: 2rem;
+      font-family: 'Syne', sans-serif;
+    }
+
+    .news-input {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .news-input input {
+      padding: 1rem 1.5rem;
+      border-radius: 60px;
+      border: none;
+      background: #1C1C2A;
+      color: white;
+      width: 280px;
+      font-family: inherit;
+    }
+
+    .news-input button {
+      background: #D4AF37;
+      border: none;
+      padding: 0 2rem;
+      border-radius: 60px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    footer {
+      border-top: 1px solid rgba(212,175,55,0.2);
+      padding: 3rem 0 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .footer-col p {
+      color: #8A8AA0;
+      max-width: 260px;
+      margin-top: 1rem;
+    }
+
+    .socials i {
+      font-size: 1.4rem;
+      margin-right: 1rem;
+      color: #B0B0C5;
+      transition: 0.2s;
+    }
+
+    .socials i:hover {
+      color: #D4AF37;
+    }
+
+    @media (max-width: 800px) {
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      .container {
+        padding: 0 1.2rem;
+      }
+      .navbar {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .hero {
+        flex-direction: column;
+      }
+    }
+  </style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NTV0NLN2X5"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-NTV0NLN2X5');
+</script>
+
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="navbar">
+      <a href="#" class="logo">fab-garmrent <span>// FUTURE RELICS</span></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+      </div>
+      <div class="icon-group">
+        <i class="fas fa-search"></i>
+        <i class="fas fa-user-astronaut"></i>
+        <i class="fas fa-satchel"></i>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <!-- Hero section: distinct and immersive -->
+    <div class="hero">
+      <div class="hero-content">
+        <div class="hero-badge">✨ LIMITED DROP 001 ✨</div>
+        <h1>Artifacts from <span class="hero-highlight">a parallel timeline</span> — yours to claim.</h1>
+        <p class="hero-desc">fab-garmrent curates impossible objects: wearable tech, kinetic sculptures, and rare editions where nostalgia meets tomorrow. Each piece is a fragment of an unwritten future.</p>
+        <div class="btn-group">
+          <a href="#" class="btn-primary"><i class="fas fa-gem"></i> Explore The Vault</a>
+          <a href="#" class="btn-outline"><i class="fas fa-waveform"></i> Immersive Lookbook</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <!-- svg simulated futuristic abstract sculpture -->
+        <img src="https://placehold.co/600x600/14141F/D4AF37?text=ÆON+SCULPTURE" alt="Aeon Artifact" style="background: radial-gradient(circle at 30% 20%, #1F1F2E, #0A0A12); object-fit: cover;">
+      </div>
+    </div>
+
+    <!-- Categories: surreal groupings -->
+    <div class="categories">
+      <h2>explore dimensions</h2>
+      <div class="section-subhead">curated anomalies — limited resonance</div>
+      <div class="category-grid">
+        <div class="category-card">
+          <div class="category-icon"><i class="fas fa-crown"></i></div>
+          <h3>Chrono Couture</h3>
+          <p>Garments that shift hue with ambient frequency.</p>
+        </div>
+        <div class="category-card">
+          <div class="category-icon"><i class="fas fa-microchip"></i></div>
+          <h3>Neo Relics</h3>
+          <p>Upcycled circuits & functional fossils.</p>
+        </div>
+        <div class="category-card">
+          <div class="category-icon"><i class="fas fa-crystal-ball"></i></div>
+          <h3>Oracle Objects</h3>
+          <p>Ritual tools for the modern mystic.</p>
+        </div>
+        <div class="category-card">
+          <div class="category-icon"><i class="fas fa-satellite-dish"></i></div>
+          <h3>Signal Wear</h3>
+          <p>Jackets that react to digital whispers.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Featured Products: Unique names & design -->
+    <div class="products">
+      <h2>featured artifacts</h2>
+      <div class="section-subhead">limited frequency drops / only 100 units per timeline</div>
+      <div class="product-slider">
+        <!-- Product 1 -->
+        <div class="product-card">
+          <div class="product-img">
+            <i class="fas fa-moon"></i>
+            <span class="badge">MINT CONDITION</span>
+          </div>
+          <div class="product-info">
+            <div class="product-title">LUNAR APEX MASK</div>
+            <div class="product-desc">Neuro-responsive polymer, morphs texture in real time.</div>
+            <div class="price-row">
+              <span class="price">₿ 0.42</span>
+              <button class="add-cart"><i class="fas fa-plus-circle"></i> claim</button>
+            </div>
+          </div>
+        </div>
+        <!-- Product 2 -->
+        <div class="product-card">
+          <div class="product-img">
+            <i class="fas fa-hourglass-half"></i>
+            <span class="badge">TIME CAPSULE</span>
+          </div>
+          <div class="product-info">
+            <div class="product-title">CHRONO·ECHO BOTTLE</div>
+            <div class="product-desc">Encapsulated light fragments from supernova remnants.</div>
+            <div class="price-row">
+              <span class="price">₿ 0.78</span>
+              <button class="add-cart"><i class="fas fa-plus-circle"></i> claim</button>
+            </div>
+          </div>
+        </div>
+        <!-- Product 3 -->
+        <div class="product-card">
+          <div class="product-img">
+            <i class="fas fa-robot"></i>
+            <span class="badge">AI COLLAB</span>
+          </div>
+          <div class="product-info">
+            <div class="product-title">ORACLE PENDANT V.2</div>
+            <div class="product-desc">Generative data talisman, syncs with personal I/O.</div>
+            <div class="price-row">
+              <span class="price">₿ 0.59</span>
+              <button class="add-cart"><i class="fas fa-plus-circle"></i> claim</button>
+            </div>
+          </div>
+        </div>
+        <!-- Product 4 -->
+        <div class="product-card">
+          <div class="product-img">
+            <i class="fas fa-feather-alt"></i>
+            <span class="badge">ETHEREAL</span>
+          </div>
+          <div class="product-info">
+            <div class="product-title">PHANTOM CLOAK</div>
+            <div class="product-desc">Light-bending threads, chameleon-core fabric.</div>
+            <div class="price-row">
+              <span class="price">₿ 1.25</span>
+              <button class="add-cart"><i class="fas fa-plus-circle"></i> claim</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> <!-- end container for products & categories -->
+
+  <!-- Full width USP block with different background aura -->
+  <div class="container">
+    <div class="usp-section">
+      <div class="usp-grid">
+        <div class="usp-item">
+          <div class="usp-icon"><i class="fas fa-cube"></i></div>
+          <div class="feature-title">Zero Waste Reality</div>
+          <p style="color:#b6b6cf;">Each artifact is crafted from post‑dimension materials.</p>
+        </div>
+        <div class="usp-item">
+          <div class="usp-icon"><i class="fas fa-shield-alt"></i></div>
+          <div class="feature-title">Blockchain Provenance</div>
+          <p style="color:#b6b6cf;">Verifiable rarity on the ÆON ledger.</p>
+        </div>
+        <div class="usp-item">
+          <div class="usp-icon"><i class="fas fa-shipping-fast"></i></div>
+          <div class="feature-title">Interdimensional Shipping</div>
+          <p style="color:#b6b6cf;">Carbon‑neutral delivery through quantum couriers.</p>
+        </div>
+        <div class="usp-item">
+          <div class="usp-icon"><i class="fas fa-hand-sparkles"></i></div>
+          <div class="feature-title">Evergreen Support</div>
+          <p style="color:#b6b6cf;">Lifetime maintenance and resonance calibration.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Newsletter + immersive vibe -->
+  <div class="container">
+    <div class="newsletter">
+      <h3>enter the ÆON loop</h3>
+      <p style="max-width: 500px; margin: 0.7rem auto 0;">Subscribe to receive temporal drops, secret archives, and access keys.</p>
+      <div class="news-input">
+        <input type="email" placeholder="your ether address / email">
+        <button><i class="fas fa-key"></i> Activate</button>
+      </div>
+    </div>
+
+    <!-- editorial mini section (extra unique content) -->
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin: 2rem 0 3rem;">
+      <div style="flex:1; background: #0C0C18; border-radius: 32px; padding: 2rem;">
+        <i class="fas fa-scroll" style="font-size: 2rem; color:#D4AF37; margin-bottom: 1rem; display:inline-block;"></i>
+        <h3 style="font-family: Syne; margin-bottom: 0.8rem;">The ÆON Manifesto</h3>
+        <p style="color:#b1b1c9;">“We don’t sell objects, we transmit fragments of a recalibrated future. Every garment carries a hidden signal, every object a forgotten memory from an alternate timeline.”</p>
+        <a href="#" style="color:#D4AF37; margin-top: 1rem; display: inline-block;">Read full manifesto →</a>
+      </div>
+      <div style="flex:1; background: #0C0C18; border-radius: 32px; padding: 2rem;">
+        <i class="fas fa-chart-line" style="font-size: 2rem; color:#D4AF37; margin-bottom: 1rem;"></i>
+        <h3 style="font-family: Syne; margin-bottom: 0.8rem;">Members only: The Vault</h3>
+        <p style="color:#b1b1c9;">Get early access to prototype drops, exclusive AI collabs, and rare artifact auctions. Join the guild of timeline architects.</p>
+        <button class="add-cart" style="margin-top: 1rem; background:#D4AF37; color:#02020A; border:none; padding:0.6rem 1.5rem;">Join the Guild</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem;">
+    <div class="footer-col">
+      <div class="logo" style="font-size: 1.6rem;">fab-garmrent</div>
+      <p>Artifacts beyond the event horizon. Established in the year 20XX.</p>
+      <div class="socials" style="margin-top: 1rem;">
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-x-twitter"></i>
+        <i class="fab fa-discord"></i>
+        <i class="fab fa-github"></i>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <p>Artifact Index</p>
+      <p>Drop Calendar</p>
+      <p>Guild Treasury</p>
+    </div>
+    <div class="footer-col">
+      <h4>Info</h4>
+      <p>Quantum Guarantee</p>
+      <p>Shipping & Returns</p>
+      <p>ÆON Journal</p>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>oracle@aeonverse.com</p>
+      <p>+00 000 000 000</p>
+    </div>
+  </div>
+  <div class="container" style="text-align: center; padding: 1.5rem 0 0; border-top: 1px solid #1E1E2A; margin-top: 2rem;">
+    <p style="font-size: 0.75rem;">© 2026 fab-garmrent — temporal artifacts, all rights reserved across timelines.</p>
+  </div>
+</footer>
+
+<!-- tiny interactive alert for demo (just playful) -->
+<script>
+  const addBtns = document.querySelectorAll('.add-cart');
+  addBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      alert('🌀 Artifact added to your ÆON satchel. Complete your claim at checkout.');
+    });
+  });
+  // newsletter simulate
+  const newsBtn = document.querySelector('.newsletter button');
+  if(newsBtn) {
+    newsBtn.addEventListener('click', () => {
+      alert('✨ You are now part of the ÆON resonance. Check your temporal inbox.');
+    });
+  }
+  // guild button
+  const guildBtn = document.querySelector('.add-cart[style*="margin-top: 1rem; background:#D4AF37"]');
+  if(guildBtn) {
+    guildBtn.addEventListener('click', () => {
+      alert('🔓 Welcome to the inner circle. The Vault awaits.');
+    });
+  }
+</script>
+</body>
+</html>

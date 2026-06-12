@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>fab-garmrent — About the Collective</title>
+  <!-- Google Fonts + Modern fallback -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #02020A;
+      font-family: 'Inter', sans-serif;
+      color: #EAEAEF;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    ::selection {
+      background: #D4AF37;
+      color: #02020A;
+    }
+
+    h1, h2, h3, .logo, .nav-links a {
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* header */
+    header {
+      padding: 1.5rem 0;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+      backdrop-filter: blur(4px);
+      background: rgba(2, 2, 10, 0.85);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.9rem;
+      font-weight: 800;
+      background: linear-gradient(125deg, #F5E6B2, #C5A028);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      text-decoration: none;
+    }
+
+    .logo span {
+      font-weight: 300;
+      font-size: 1rem;
+      background: none;
+      color: #D4AF37;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #EAEAEF;
+      font-weight: 500;
+      transition: 0.2s ease;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: #D4AF37;
+    }
+
+    .icon-group {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .icon-group i {
+      font-size: 1.3rem;
+      cursor: pointer;
+      transition: 0.2s;
+      color: #EAEAEF;
+    }
+
+    .icon-group i:hover {
+      color: #D4AF37;
+    }
+
+    /* Hero About Section */
+    .about-hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3rem;
+      padding: 4rem 0 3rem;
+    }
+
+    .about-hero-content {
+      flex: 1.2;
+    }
+
+    .about-badge {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      background: rgba(212, 175, 55, 0.15);
+      display: inline-block;
+      padding: 0.3rem 0.9rem;
+      border-radius: 40px;
+      color: #D4AF37;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-hero-content h1 {
+      font-size: 4rem;
+      line-height: 1.1;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, #FFFFFF 0%, #D4AF37 80%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .about-hero-content p {
+      font-size: 1.1rem;
+      line-height: 1.5;
+      color: #BCBCCF;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-visual {
+      flex: 1;
+      position: relative;
+    }
+
+    .about-visual img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 40px;
+      filter: drop-shadow(0 20px 30px rgba(0,0,0,0.6));
+      border: 1px solid rgba(212,175,55,0.4);
+    }
+
+    /* Origin Story Section */
+    .origin-story {
+      padding: 4rem 0;
+      border-top: 1px solid rgba(212,175,55,0.15);
+      border-bottom: 1px solid rgba(212,175,55,0.15);
+      margin: 2rem 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-header h2 {
+      font-size: 2.8rem;
+      background: linear-gradient(135deg, #FFFFFF, #D4AF37);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      display: inline-block;
+    }
+
+    .section-subhead {
+      color: #A9A9C0;
+      text-align: center;
+      max-width: 700px;
+      margin: 1rem auto 0;
+    }
+
+    .story-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .story-text {
+      flex: 1.5;
+    }
+
+    .story-text p {
+      margin-bottom: 1.2rem;
+      line-height: 1.7;
+      color: #CBCBDE;
+    }
+
+    .story-quote {
+      flex: 1;
+      background: rgba(212,175,55,0.08);
+      border-radius: 32px;
+      padding: 2rem;
+      border-left: 4px solid #D4AF37;
+      font-style: italic;
+    }
+
+    .story-quote i {
+      font-size: 2rem;
+      color: #D4AF37;
+      opacity: 0.6;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    /* Mission & Values */
+    .mission-section {
+      padding: 3rem 0;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .value-card {
+      background: rgba(15, 15, 26, 0.7);
+      backdrop-filter: blur(4px);
+      border-radius: 32px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      transition: 0.3s ease;
+    }
+
+    .value-card:hover {
+      transform: translateY(-6px);
+      border-color: #D4AF37;
+      background: rgba(30, 30, 50, 0.8);
+    }
+
+    .value-icon {
+      font-size: 2.8rem;
+      color: #D4AF37;
+      margin-bottom: 1.2rem;
+    }
+
+    .value-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .value-card p {
+      color: #B0B0C5;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    /* The Collective Team */
+    .team-section {
+      padding: 4rem 0;
+      background: radial-gradient(circle at 20% 30%, #0B0B18, #02020A);
+      border-radius: 60px;
+      margin: 2rem 0;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .team-card {
+      text-align: center;
+      background: rgba(8, 8, 20, 0.6);
+      border-radius: 32px;
+      padding: 1.8rem;
+      transition: 0.2s;
+      border: 1px solid rgba(212,175,55,0.1);
+    }
+
+    .team-avatar {
+      width: 120px;
+      height: 120px;
+      background: linear-gradient(145deg, #1F1F30, #0A0A18);
+      border-radius: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      border: 2px solid #D4AF37;
+    }
+
+    .team-avatar i {
+      font-size: 3.5rem;
+      color: #D4AF37;
+    }
+
+    .team-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .team-role {
+      color: #D4AF37;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      margin-bottom: 0.6rem;
+    }
+
+    .team-bio {
+      font-size: 0.8rem;
+      color: #9E9EB5;
+    }
+
+    /* Timeline Milestones */
+    .milestones {
+      padding: 3rem 0;
+    }
+
+    .timeline {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .milestone {
+      flex: 1;
+      min-width: 180px;
+      background: rgba(0,0,0,0.3);
+      border-radius: 28px;
+      padding: 1.5rem;
+      text-align: center;
+      border-top: 3px solid #D4AF37;
+    }
+
+    .milestone-year {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #D4AF37;
+      font-family: 'Syne', sans-serif;
+    }
+
+    /* CTA Section */
+    .cta-join {
+      background: linear-gradient(125deg, #0F0F1E, #03030C);
+      border-radius: 48px;
+      padding: 4rem 2rem;
+      text-align: center;
+      margin: 3rem 0 4rem;
+      border: 1px solid rgba(212,175,55,0.3);
+    }
+
+    .cta-join h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .btn-primary {
+      background: #D4AF37;
+      color: #02020A;
+      padding: 0.9rem 2rem;
+      border-radius: 60px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-top: 1.5rem;
+    }
+
+    .btn-primary:hover {
+      background: #EBC65C;
+      transform: scale(1.02);
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+    }
+
+    footer {
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+      padding: 3rem 0 2rem;
+      margin-top: 2rem;
+      background: #02020A;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .footer-col p {
+      color: #8A8AA0;
+      max-width: 260px;
+      margin-top: 1rem;
+    }
+
+    .socials i {
+      font-size: 1.4rem;
+      margin-right: 1rem;
+      color: #B0B0C5;
+      transition: 0.2s;
+    }
+
+    .socials i:hover {
+      color: #D4AF37;
+    }
+
+    @media (max-width: 800px) {
+      .about-hero-content h1 {
+        font-size: 2.5rem;
+      }
+      .container {
+        padding: 0 1.2rem;
+      }
+      .navbar {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .story-grid {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="navbar">
+      <a href="#" class="logo">fab-garmrent <span>// FUTURE RELICS</span></a>
+      <div class="nav-links">
+       <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+      </div>
+      <div class="icon-group">
+        <i class="fas fa-search"></i>
+        <i class="fas fa-user-astronaut"></i>
+        <i class="fas fa-satchel"></i>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <!-- About Hero -->
+    <div class="about-hero">
+      <div class="about-hero-content">
+        <div class="about-badge">✧ MANIFESTO 001 ✧</div>
+        <h1>We craft impossible objects from futures that never were.</h1>
+        <p>fab-garmrent is a collective of artists, technologists, and temporal architects. We don't just sell products — we transmit fragments of parallel timelines, blending nostalgia with tomorrow's edge. Every artifact carries a hidden signal, every garment a forgotten memory.</p>
+        <div class="btn-group">
+          <a href="#" class="btn-primary" style="background:#D4AF37; padding:0.8rem 1.8rem;"><i class="fas fa-gem"></i> Join the Collective</a>
+        </div>
+      </div>
+      <div class="about-visual">
+        <img src="https://placehold.co/600x600/14141F/D4AF37?text=ÆON+SYMBOL" alt="Aeon Collective Symbol" style="background: radial-gradient(circle at 30% 20%, #1F1F2E, #0A0A12); object-fit: cover;">
+      </div>
+    </div>
+  </div>
+
+  <!-- Origin Story -->
+  <div class="container">
+    <div class="origin-story">
+      <div class="section-header">
+        <h2>The Origin Rift</h2>
+        <div class="section-subhead">How a glitch in reality became a movement</div>
+      </div>
+      <div class="story-grid">
+        <div class="story-text">
+          <p>In 2022, our founder — a relic hunter known only as "The Archivist" — stumbled upon a warehouse filled with prototypes from defunct space programs, forgotten tech labs, and avant-garde ateliers. Instead of seeing junk, they saw echoes of unrealized tomorrows. That discovery sparked an idea: what if we could curate the most evocative objects from timelines that never fully materialized?</p>
+          <p>Thus, fab-garmrent was born. We began as a small collective of 5 creators, reverse-engineering the aesthetics of the future-past. Today, we've grown into an interdimensional guild of 30+ artisans, engineers, and storytellers, each dedicated to one mission: to make the impossible wearable, collectible, and tangible.</p>
+          <p>Every drop is a limited window into another version of reality — a chance to own a piece of a future that could have been. Welcome to the VERSE.</p>
+        </div>
+        <div class="story-quote">
+          <i class="fas fa-quote-left"></i>
+          <p style="font-size:1rem; line-height:1.5;">"Objects carry memory. We curate memories that haven't happened yet — but should have."</p>
+          <p style="margin-top:1rem; color:#D4AF37;">— The Archivist, Founder</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mission & Values -->
+  <div class="container">
+    <div class="mission-section">
+      <div class="section-header">
+        <h2>Our Resonance</h2>
+        <div class="section-subhead">The four pillars that guide every artifact we create</div>
+      </div>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon"><i class="fas fa-infinity"></i></div>
+          <h3>Timeless Craft</h3>
+          <p>We blend ancient techniques with futuristic materials — each artifact is designed to outlive trends and transcend eras.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon"><i class="fas fa-leaf"></i></div>
+          <h3>Zero Waste Reality</h3>
+          <p>Sustainable to the core: upcycled components, biodegradable packaging, and carbon-neutral shipping across all timelines.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon"><i class="fas fa-hand-sparkles"></i></div>
+          <h3>Radical Authenticity</h3>
+          <p>Every artifact includes a blockchain-provenanced certificate. No imitations. No parallel copies.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon"><i class="fas fa-users"></i></div>
+          <h3>Guild Economy</h3>
+          <p>We're a cooperative — 10% of all proceeds fund emerging temporal artists and community-led drops.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- The Collective Team -->
+  <div class="container">
+    <div class="team-section">
+      <div class="section-header">
+        <h2>The ÆON Collective</h2>
+        <div class="section-subhead">Visionaries, alchemists, and architects of the unreal</div>
+      </div>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-avatar"><i class="fas fa-user-astronaut"></i></div>
+          <h3>Kaelen "The Archivist"</h3>
+          <div class="team-role">Founder / Temporal Curator</div>
+          <p class="team-bio">Ex-artifact hunter, now leads the vision and universe-building.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar"><i class="fas fa-microchip"></i></div>
+          <h3>Zara Quinn</h3>
+          <div class="team-role">Lead Technologist</div>
+          <p class="team-bio">Wearable tech & reactive fabrics. Makes the impossible function.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar"><i class="fas fa-palette"></i></div>
+          <h3>Milo Ren</h3>
+          <div class="team-role">Creative Director</div>
+          <p class="team-bio">Shape-shifter of aesthetics, blending retro-futurism with avant-garde.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar"><i class="fas fa-cube"></i></div>
+          <h3>Senna Grey</h3>
+          <div class="team-role">Artifact Alchemist</div>
+          <p class="team-bio">Material science sorcerer. Turns scrap into relics.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Timeline Milestones -->
+  <div class="container">
+    <div class="milestones">
+      <div class="section-header">
+        <h2>Temporal Milestones</h2>
+        <div class="section-subhead">Our journey through the multiverse of design</div>
+      </div>
+      <div class="timeline">
+        <div class="milestone">
+          <div class="milestone-year">2022</div>
+          <p>fab-garmrent founded in a converted observatory. First 5 artifacts launched.</p>
+        </div>
+        <div class="milestone">
+          <div class="milestone-year">2023</div>
+          <p>First sold-out drop: "Echo Series" — 500 units in 12 minutes.</p>
+        </div>
+        <div class="milestone">
+          <div class="milestone-year">2024</div>
+          <p>Opened Guild membership & launched blockchain provenance.</p>
+        </div>
+        <div class="milestone">
+          <div class="milestone-year">2026</div>
+          <p>Global recognition: featured in "Future of Fashion" & "Tech Art Today".</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Join the Movement CTA -->
+  <div class="container">
+    <div class="cta-join">
+      <h3>Become part of the ÆON timeline</h3>
+      <p style="max-width: 600px; margin: 1rem auto; color: #BCBCCF;">Join the Guild to access exclusive drops, early relic alerts, and a community of future-architects.</p>
+      <a href="#" class="btn-primary"><i class="fas fa-hand-sparkles"></i> Join the Guild</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <div class="logo" style="font-size: 1.6rem;">fab-garmrent</div>
+        <p>Artifacts beyond the event horizon. Established in the year 20XX.</p>
+        <div class="socials" style="margin-top: 1rem;">
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-x-twitter"></i>
+          <i class="fab fa-discord"></i>
+          <i class="fab fa-github"></i>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <p>Artifact Index</p>
+        <p>Drop Calendar</p>
+        <p>Guild Treasury</p>
+      </div>
+      <div class="footer-col">
+        <h4>Info</h4>
+        <p><a href="#" style="color:#D4AF37; text-decoration: none;">About Us</a></p>
+        <p>Quantum Guarantee</p>
+        <p>ÆON Journal</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>oracle@aeonverse.art</p>
+        <p>+00 000 000 000</p>
+      </div>
+    </div>
+    <div style="text-align: center; padding: 1.5rem 0 0; border-top: 1px solid #1E1E2A; margin-top: 2rem;">
+      <p style="font-size: 0.75rem;">© 2026 fab-garmrent — temporal artifacts, all rights reserved across timelines. This is a fictional e-commerce concept.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Interactive elements for header icons and buttons
+  const iconGroup = document.querySelectorAll('.icon-group i');
+  iconGroup.forEach(icon => {
+    icon.addEventListener('click', () => {
+      alert('🔮 Portal navigation: sign in or access your satchel from the main universe.');
+    });
+  });
+
+  const joinBtns = document.querySelectorAll('.btn-primary');
+  joinBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      alert('🌀 Welcome, future member. The Guild invitation has been sent to your resonant frequency (demo).');
+    });
+  });
+</script>
+</body>
+</html>
